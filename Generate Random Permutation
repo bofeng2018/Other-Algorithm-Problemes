@@ -1,0 +1,27 @@
+Using a random number generator which can uniformly generate a interger between 1 and a self-defined upper bound k. Design an algorithm to randomly permute the size-n array num consisted of consecutive positive intergers from 1 to n.
+
+Solution:
+The idea is to scan through all positions of the size-n array and give the current number at each position equal probabilities to be at all positions including its current position.
+
+Time Complexity: O(N)
+Space Complexity: O(1)
+
+
+from random import randrange
+
+class solution:
+    def generate(array):
+        ans = [i for i in range(1, N + 1)]
+        for i in range(N):
+            index = randrange(N)
+            ans[i], ans[index] = ans[index], ans[i]
+        return ans
+
+#from collections import Counter
+#test = []
+#for i in range(100000):
+
+#    test.append(solution.generate(10))
+#    
+#for i in range(10):
+#    print(Counter(t[i] for t in test))
